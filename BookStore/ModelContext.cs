@@ -31,6 +31,10 @@ namespace BookStore
         public virtual DbSet<BookGenre> BookGenres { get; set; }
         public virtual DbSet<BookInfo> BookInfos { get; set; }
         public virtual DbSet<BranchInfo> BranchInfos { get; set; }
+        public virtual DbSet<BookPrice> BookPrices { get; set; }
+        public virtual DbSet<StockBalance> StockBalances { get; set; }
+        public virtual DbSet<Sales> Sales { get; set; }
+
     }
 
 }

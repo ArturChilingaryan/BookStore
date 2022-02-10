@@ -55,21 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202202021211162_v1.cs" />
-    <Compile Include="Migrations\202202021211162_v1.designer.cs">
-      <DependentUpon>202202021211162_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202202021822058_v2.cs" />
-    <Compile Include="Migrations\202202021822058_v2.designer.cs">
-      <DependentUpon>202202021822058_v2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
     <Compile Include="Model\AuthorInfo.cs" />
     <Compile Include="Model\BookGenre.cs" />
     <Compile Include="Model\BookInfo.cs" />
+    <Compile Include="Model\BookPrice.cs" />
     <Compile Include="Model\BranchInfo.cs" />
     <Compile Include="ModelContext.cs" />
+    <Compile Include="Model\Sales.cs" />
+    <Compile Include="Model\StockBalance.cs" />
+    <Compile Include="Model\TypeOfMovements.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -88,14 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202202021211162_v1.resx">
-      <DependentUpon>202202021211162_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202021822058_v2.resx">
-      <DependentUpon>202202021822058_v2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
