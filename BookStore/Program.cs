@@ -10,14 +10,20 @@ namespace BookStore
             
             using (ModelContext context = new ModelContext())
             {
-                //context.AuthorInfos.Add(new AuthorInfo { Name = "Mark Twen" });
+                Console.WriteLine("Entity TEST");
+
+                //AuthorInfo authorInfo = new AuthorInfo { Name = "Mark Twen" };
+                //context.AuthorInfos.Add(authorInfo);
+
+                //BookGenre adventureGenre = new BookGenre { Name = "Adventure" };
+                //AuthorInfo dyuma = new AuthorInfo { Name = "Alexandre Dumas"};
+                //context.BookInfos.Add(new BookInfo {Name = "The Three Musketeers", Genre = adventureGenre, Author = dyuma});
+                //context.BookInfos.Add(new BookInfo { Name = "The Count of Monte Cristo", Genre = adventureGenre, Author = dyuma });
 
                 //context.SaveChanges();
 
-                var authors = context.AuthorInfos;
-
-                foreach (var author in authors) {
-                    Console.WriteLine(author.Name);
+                foreach (var book in context.BookInfos) {
+                    Console.WriteLine(book.Name);
                 }
 
                 //Console.WriteLine(authors);
