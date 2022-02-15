@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
+    <Compile Include="ModelFactory\AuthorFactory.cs" />
     <Compile Include="Model\AuthorInfo.cs" />
     <Compile Include="Model\BookGenre.cs" />
     <Compile Include="Model\BookInfo.cs" />
@@ -94,6 +95,7 @@
       <DependentUpon>202202141044532_DatabaseInitial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
