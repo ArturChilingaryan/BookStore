@@ -5,7 +5,7 @@ using BookStore;
 namespace BookStoreAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/book-info")]
     public class BookInfoController : ControllerBase
     {
         
@@ -16,7 +16,7 @@ namespace BookStoreAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetBooks")]
+        [HttpGet(Name = "get-books")]
         public IEnumerable<BookInfo> Get()
         {
             using (ModelContext context = new ModelContext())
