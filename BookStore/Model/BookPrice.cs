@@ -11,7 +11,7 @@ namespace BookStore.Model
         public int ID { get; set; }
         public BookInfo Book { get; set; }
         public BranchInfo Branch { get; set; }
-        public int Quantity { get; set; }
+        public int Price { get; set; }
         public DateTime PriceDateTime { get; set; }
     }
 }

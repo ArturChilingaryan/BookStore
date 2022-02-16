@@ -70,9 +70,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
     <Compile Include="ModelFactory\AuthorFactory.cs" />
+    <Compile Include="ModelFactory\BalanceFactory.cs" />
     <Compile Include="ModelFactory\BookFactory.cs" />
     <Compile Include="ModelFactory\BookGenreFactory.cs" />
     <Compile Include="ModelFactory\BranchFactory.cs" />
+    <Compile Include="ModelFactory\PriceFactory.cs" />
+    <Compile Include="ModelFactory\SalesFactory.cs" />
     <Compile Include="Model\AuthorInfo.cs" />
     <Compile Include="Model\BookGenre.cs" />
     <Compile Include="Model\BookInfo.cs" />
