@@ -9,25 +9,36 @@ namespace BookStore.ModelFactory
 {
     public class AuthorFactory
     {
-        private AuthorFactory instance;
+        private static AuthorFactory instance;
         private AuthorFactory() { 
         }
 
-        public AuthorFactory GetInstance() {
+        public static AuthorFactory GetInstance() {
             if (instance == null) {
                 instance = new AuthorFactory();
             }
             return instance;
         }
 
-        public AuthorInfo CreateAuthor(ModelContext context, string AuthorName) {
+        public AuthorInfo CreateAuthor(ModelContext dbcontext, string authorName) {
 
-            AuthorInfo author = context.AuthorInfos.FirstOrDefault(a => a.Name == AuthorName);
+            AuthorInfo author = dbcontext.AuthorInfos.FirstOrDefault(a => a.Name == authorName);
             if (author == null) { 
-                author = new AuthorInfo { Name = AuthorName };
-    
-                context.AuthorInfos.Add(author);
-                context.SaveChanges();
+                author = new AuthorInfo { Name = authorName };
+
+                dbcontext.AuthorInfos.Add(author);
+                dbcontext.SaveChanges();
+            }
+            return author;
+
+        }
+
+        public AuthorInfo GetAuthorByID(ModelContext dbcontext, int id) {
+
+            AuthorInfo author = dbcontext.AuthorInfos.FirstOrDefault(a => a.ID == id);
+            if (author == null)
+            {
+                throw new Exception("Element not found by id=" + id);
             }
             return author;
 

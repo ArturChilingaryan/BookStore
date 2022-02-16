@@ -59,9 +59,20 @@
     <Compile Include="Migrations\202202141044532_DatabaseInitial.designer.cs">
       <DependentUpon>202202141044532_DatabaseInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202160940326_TypeCorrect.cs" />
+    <Compile Include="Migrations\202202160940326_TypeCorrect.designer.cs">
+      <DependentUpon>202202160940326_TypeCorrect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202161014567_BookLists.cs" />
+    <Compile Include="Migrations\202202161014567_BookLists.designer.cs">
+      <DependentUpon>202202161014567_BookLists.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
     <Compile Include="ModelFactory\AuthorFactory.cs" />
+    <Compile Include="ModelFactory\BookFactory.cs" />
+    <Compile Include="ModelFactory\BookGenreFactory.cs" />
+    <Compile Include="ModelFactory\BranchFactory.cs" />
     <Compile Include="Model\AuthorInfo.cs" />
     <Compile Include="Model\BookGenre.cs" />
     <Compile Include="Model\BookInfo.cs" />
@@ -93,6 +104,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202141044532_DatabaseInitial.resx">
       <DependentUpon>202202141044532_DatabaseInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202160940326_TypeCorrect.resx">
+      <DependentUpon>202202160940326_TypeCorrect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202161014567_BookLists.resx">
+      <DependentUpon>202202161014567_BookLists.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

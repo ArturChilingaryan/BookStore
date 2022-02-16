@@ -14,6 +14,8 @@ namespace BookStore.ModelConfigration
 
             this.ToTable("Authors");
 
+            this.HasKey(p => p.ID);
+
             this.Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(100);
