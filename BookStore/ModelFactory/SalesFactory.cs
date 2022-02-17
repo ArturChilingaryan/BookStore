@@ -8,7 +8,7 @@ using BookStore.Model;
 namespace BookStore.ModelFactory
 {
     public class SalesFactory {
-    {
+    
         private static SalesFactory instance;
         private SalesFactory()
         {
@@ -25,26 +25,17 @@ namespace BookStore.ModelFactory
 
         public void SalesInOut(ModelContext dbcontext, int bookID, int branchID, int quantity, double price, TypeOfMovements typeOfMovements)
         {
-            BookInfo book = dbcontext.BookInfos.FirstOrDefault(a => a.Id == bookID);
-            if (book == null)
-            {
-                throw new Exception("No such book with ID: " + bookID);
-            }
-
-            BranchInfo branch = dbcontext.BranchInfos.FirstOrDefault(a => a.ID == branchID);
-            if (branch == null)
-            {
-                throw new Exception("No such branch with ID: " + branchID);
-            }
+            BookInfo book = BookFactory.GetInstance().GetBookByID(dbcontext, bookID);
+            BranchInfo branch = BranchFactory.GetInstance().GetBranchInfoByID(dbcontext, branchID);
 
             Sales sale = new Sales
             {
-                Book = book,
-                Branch = branch,
-                Quantity = quantity,
-                Sum = quantity * price,
-                MovementDate = System.DateTime.Now,
-                TypeOfMovement = typeOfMovements
+                Book            = book,
+                Branch          = branch,
+                Quantity        = quantity,
+                Sum             = quantity * price,
+                MovementDate    = System.DateTime.Now,
+                TypeOfMovement  = typeOfMovements
             };
 
             dbcontext.Sales.Add(sale);

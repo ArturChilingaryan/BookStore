@@ -44,7 +44,7 @@ namespace BookStore.ModelFactory
             BranchInfo bookGenre = dbcontext.BranchInfos.FirstOrDefault(a => a.ID == id);
             if (bookGenre == null)
             {
-                throw new Exception("Element not found by id=" + id);
+                throw new Exception("No such branch with ID: " + id);
             }
             return bookGenre;
 

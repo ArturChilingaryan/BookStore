@@ -24,25 +24,16 @@ namespace BookStore.ModelFactory
         }
 
         public static void SetPrice(ModelContext dbcontext, int bookID, int branchID, double price) {
-            
-            BookInfo book = dbcontext.BookInfos.FirstOrDefault(a => a.Id == bookID);
-            if (book == null)
-            {
-                throw new Exception("No such book with ID: " + bookID);
-            }
 
-            BranchInfo branch = dbcontext.BranchInfos.FirstOrDefault(a => a.ID == branchID);
-            if (branch == null)
-            {
-                throw new Exception("No such branch with ID: " + branchID);
-            }
+            BookInfo book = BookFactory.GetInstance().GetBookByID(dbcontext, bookID);
+            BranchInfo branch = BranchFactory.GetInstance().GetBranchInfoByID(dbcontext, branchID);
 
             BookPrice bookPrice = new BookPrice
             {
-                Book = book,
-                Branch = branch,
-                Price = price,
-                PriceDateTime = System.DateTime.Now,
+                Book            = book,
+                Branch          = branch,
+                Price           = price,
+                PriceDateTime   = System.DateTime.Now,
             };
 
             dbcontext.BookPrices.Add(bookPrice);
@@ -50,21 +41,20 @@ namespace BookStore.ModelFactory
         }
 
         public static double GetPrice(ModelContext dbcontext, int bookID, int branchID) {
-            double price = 0;
             
-            BookInfo book = dbcontext.BookInfos.FirstOrDefault(a => a.Id == bookID);
-            if (book == null)
-            {
-                throw new Exception("No such book with ID: " + bookID);
-            }
+            double price = 0;
 
-            BranchInfo branch = dbcontext.BranchInfos.FirstOrDefault(a => a.ID == branchID);
-            if (branch == null)
-            {
-                throw new Exception("No such branch with ID: " + branchID);
-            }
+            var query1 = dbcontext.BookPrices.GroupBy(x => x.Book, x.Branch).Select();
 
-            //dbcontext.BookPrices.GroupBy(p => p.Branch).OrderBy(p => p.PriceDate)
+            var query = (from b in dbcontext.BookPrices
+                        where (b.Book.Id == bookID && b.Branch.ID == branchID)
+                        orderby b.PriceDateTime descending
+                        select b.Price).Take(1);
+
+            foreach (var item in query)
+            {
+                return item;
+            }
 
             return price;
         }

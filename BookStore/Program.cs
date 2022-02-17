@@ -33,6 +33,9 @@ namespace BookStore
                 //    Console.WriteLine("Book {0}, ID:{1}, Author:{2}, Genre:{3}", book.Name, book.Id, book.Author, book.Genre);
                 //}
 
+                //context.Configuration.LazyLoadingEnabled = false;
+                //context.Sales.Include("BookInfo");
+
                 var query = (from b in context.BookInfos
                             select new {
                                 ID = b.Id,

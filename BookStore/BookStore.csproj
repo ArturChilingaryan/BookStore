@@ -67,6 +67,10 @@
     <Compile Include="Migrations\202202161014567_BookLists.designer.cs">
       <DependentUpon>202202161014567_BookLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202170716318_pricetype.cs" />
+    <Compile Include="Migrations\202202170716318_pricetype.designer.cs">
+      <DependentUpon>202202170716318_pricetype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
     <Compile Include="ModelFactory\AuthorFactory.cs" />
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202161014567_BookLists.resx">
       <DependentUpon>202202161014567_BookLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202170716318_pricetype.resx">
+      <DependentUpon>202202170716318_pricetype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

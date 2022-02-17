@@ -44,7 +44,7 @@ namespace BookStore.ModelFactory
             BookInfo book = dbcontext.BookInfos.FirstOrDefault(a => a.Id == id);
             if (book == null)
             {
-                throw new Exception("Element not found by id=" + id);
+                throw new Exception("No such book with ID: " + id);
             }
             return book;
 
