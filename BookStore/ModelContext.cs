@@ -22,6 +22,18 @@ namespace BookStore
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new AuthorInfoConfiguration());
+
+            modelBuilder.Configurations.Add(new BookGenreConfiguration());
+
+            modelBuilder.Configurations.Add(new BookInfoConfiguration());
+
+            modelBuilder.Configurations.Add(new BookPriceConfiguration());
+
+            modelBuilder.Configurations.Add(new BranchInfoConfiguration());
+
+            modelBuilder.Configurations.Add(new SalesConfiguration());
+
+            modelBuilder.Configurations.Add(new StockBalanceConfiguration());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 

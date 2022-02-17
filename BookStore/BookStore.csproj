@@ -73,6 +73,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelConfigration\AuthorInfoConfiguration.cs" />
+    <Compile Include="ModelConfigration\BookGenreConfiguration.cs" />
+    <Compile Include="ModelConfigration\BookInfoConfiguration.cs" />
+    <Compile Include="ModelConfigration\BookPriceConfiguration.cs" />
+    <Compile Include="ModelConfigration\BranchInfoConfiguration.cs" />
+    <Compile Include="ModelConfigration\SalesConfiguration.cs" />
+    <Compile Include="ModelConfigration\StockBalanceConfiguration.cs" />
     <Compile Include="ModelFactory\AuthorFactory.cs" />
     <Compile Include="ModelFactory\BalanceFactory.cs" />
     <Compile Include="ModelFactory\BookFactory.cs" />

@@ -44,7 +44,7 @@ namespace BookStore.ModelFactory
             
             double price = 0;
 
-            var query1 = dbcontext.BookPrices.GroupBy(x => x.Book, x.Branch).Select();
+            //var query1 = dbcontext.BookPrices.GroupBy(x => x.Book).Select(new { });
 
             var query = (from b in dbcontext.BookPrices
                         where (b.Book.Id == bookID && b.Branch.ID == branchID)
