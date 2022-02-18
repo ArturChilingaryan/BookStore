@@ -15,7 +15,7 @@ namespace BookStore
         public ModelContext()
             : base("name=BookStoreModel")
         {
-            
+
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,9 +27,9 @@ namespace BookStore
 
             modelBuilder.Configurations.Add(new BookInfoConfiguration());
 
-            modelBuilder.Configurations.Add(new BookPriceConfiguration());
-
             modelBuilder.Configurations.Add(new BranchInfoConfiguration());
+
+            modelBuilder.Configurations.Add(new BookPriceConfiguration());
 
             modelBuilder.Configurations.Add(new SalesConfiguration());
 

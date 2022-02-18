@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
-using BookStore.Model;
 using BookStore;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreAPI.Controllers
 {
-    public class BookInfoView {
+    public class BookInfoView
+    {
         public int Id { get; set; }
         public string Name { get; set; }
         public int AuthorID { get; set; }
@@ -24,7 +23,8 @@ namespace BookStoreAPI.Controllers
             using (ModelContext context = new ModelContext())
             {
                 string strID = "";
-                foreach (var tempQuery in Request.Query) {
+                foreach (var tempQuery in Request.Query)
+                {
                     if (tempQuery.Key.ToUpper() == "ID")
                     {
                         strID = tempQuery.Value.ToString();
@@ -33,23 +33,24 @@ namespace BookStoreAPI.Controllers
                 List<BookInfoView> list = new List<BookInfoView>();
 
                 int id = 0;
-                if (strID != "") {
+                if (strID != "")
+                {
                     id = Int32.Parse(strID);
                 }
                 var queryWithID = from b in context.BookInfos
-                                  where (b.Id == id || id ==0)
+                                  where (b.Id == id || id == 0)
                                   select new
                                   {
-                                    ID          = b.Id,
-                                    Name        = b.Name,
-                                    Author      = b.Author.Name,
-                                    AuthorID    = b.Author.ID,
-                                    Genre       = b.Genre.Name,
-                                    GenreID     = b.Genre.ID
-                                   };
+                                      ID = b.Id,
+                                      Name = b.Name,
+                                      Author = b.Author.Name,
+                                      AuthorID = b.Author.ID,
+                                      Genre = b.Genre.Name,
+                                      GenreID = b.Genre.ID
+                                  };
 
-                 foreach (var item in queryWithID)
-                 {
+                foreach (var item in queryWithID)
+                {
                     list.Add(new BookInfoView
                     {
                         Id = item.ID,
@@ -59,9 +60,9 @@ namespace BookStoreAPI.Controllers
                         GenreID = item.GenreID,
                         Genre = item.Genre
                     });
-                        
-                 }
-                
+
+                }
+
 
                 return list;
 

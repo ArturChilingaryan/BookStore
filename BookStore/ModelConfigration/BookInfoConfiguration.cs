@@ -21,10 +21,10 @@ namespace BookStore.ModelConfigration
                 .IsRequired()
                 .HasMaxLength(100);
 
-            this.Property(p => p.Genre.ID)
+            this.Property(p => p.GenreId)
                 .IsOptional();
 
-            this.Property(p => p.Author.ID)
+            this.Property(p => p.AuthorId)
                 .IsRequired();
         }
     }

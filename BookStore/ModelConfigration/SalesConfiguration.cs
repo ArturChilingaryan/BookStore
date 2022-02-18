@@ -17,10 +17,10 @@ namespace BookStore.ModelConfigration
 
             this.HasKey(p => p.ID);
 
-            this.Property(p => p.Book.Id)
+            this.Property(p => p.BookId)
                 .IsRequired();
 
-            this.Property(p => p.Branch.ID)
+            this.Property(p => p.BranchId)
                 .IsRequired();
 
             this.Property(p => p.Quantity)

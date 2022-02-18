@@ -10,7 +10,8 @@ namespace BookStore.ModelConfigration
 {
     public class AuthorInfoConfiguration : EntityTypeConfiguration<AuthorInfo>
     {
-        public AuthorInfoConfiguration() {
+        public AuthorInfoConfiguration()
+        {
 
             this.ToTable("Authors");
 

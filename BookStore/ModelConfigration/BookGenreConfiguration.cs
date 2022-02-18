@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.ModelConfigration 
+namespace BookStore.ModelConfigration
 {
     public class BookGenreConfiguration : EntityTypeConfiguration<BookGenre>
     {

@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore;
 using BookStore.Model;
-using BookStore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreAPI.Controllers
 {

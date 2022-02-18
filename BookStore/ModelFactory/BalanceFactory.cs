@@ -1,9 +1,4 @@
 ﻿using BookStore.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace BookStore.ModelFactory
@@ -24,18 +19,18 @@ namespace BookStore.ModelFactory
             return instance;
         }
 
-        public void StockInOut(ModelContext dbcontext, int bookID, int branchID, int quantity, TypeOfMovements typeOfMovement)
+        private void StockInOut(ModelContext dbcontext, int bookID, int branchID, int quantity, TypeOfMovements typeOfMovement)
         {
             BookInfo book = BookFactory.GetInstance().GetBookByID(dbcontext, bookID);
             BranchInfo branch = BranchFactory.GetInstance().GetBranchInfoByID(dbcontext, branchID);
 
             StockBalance stock = new StockBalance
             {
-                Book            = book,
-                Branch          = branch,
-                Quantity        = quantity,
-                MovementDate    = System.DateTime.Now,
-                TypeOfMovement  = typeOfMovement
+                Book = book,
+                Branch = branch,
+                Quantity = quantity,
+                MovementDate = System.DateTime.Now,
+                TypeOfMovement = typeOfMovement
             };
 
             dbcontext.StockBalances.Add(stock);
