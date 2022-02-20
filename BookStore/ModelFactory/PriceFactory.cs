@@ -49,22 +49,6 @@ namespace BookStore.ModelFactory
                 .ToList();
 
             return list;
-            
-            //double price = 0;
-
-            //var query1 = dbcontext.BookPrices.GroupBy(x => x.Book).Select(new { });
-
-            //var query = (from b in dbcontext.BookPrices
-            //             where (b.Book.Id == bookID && b.Branch.ID == branchID)
-            //             orderby b.PriceDateTime descending
-            //             select b.Price).Take(1);
-
-            //foreach (var item in query)
-            //{
-            //    return item;
-            //}
-
-            //return price;
         }
     }
 }

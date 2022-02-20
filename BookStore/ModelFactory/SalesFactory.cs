@@ -1,4 +1,6 @@
 ﻿using BookStore.Model;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace BookStore.ModelFactory
 {
@@ -48,6 +50,16 @@ namespace BookStore.ModelFactory
         {
             SalesInOut(dbcontext, bookID, branchID, -quantity, price, TypeOfMovements.Consumption);
         }
+        public List<Sales> GetBalance(ModelContext dbcontext, int bookID, int branchID)
+        {
 
+            var list = dbcontext.Sales
+                .Where(x => ((x.BranchId == branchID || branchID == 0) && (x.BookId == bookID || bookID == 0)))
+                .GroupBy(x => new { x.BranchId, x.BookId })
+                .Select(x => x.Sum(y => y.Sum))
+                .ToList();
+
+            return null;
+        }
     }
 }

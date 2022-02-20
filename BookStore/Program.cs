@@ -11,7 +11,7 @@ namespace BookStore
 
             using (ModelContext context = new ModelContext())
             {
-                //DatabaseFirstFilling.Fill(context);
+                DatabaseFirstFilling.Fill(context);
 
                 var list = PriceFactory.GetInstance().GetPrice(context, 1, 0);
 
